@@ -41,13 +41,13 @@ class Dog
     self
   end
 
-  def self.create
+  def self.create(name:, breed:)
     dog = Dog.new(name: name, breed: breed)
     dog.save
     dog
   end
 
-  def self.find_by_id
+  def self.find_by_id(id)
     sql = <<-SQL
       SELECT *
       FROM dogs
@@ -76,7 +76,7 @@ class Dog
     self.new(id: id, name: name, breed: breed)
   end
 
-  def self.find_by_name
+  def self.find_by_name(name)
     sql = <<-SQL
       SELECT *
       FROM dogs
