@@ -52,12 +52,15 @@ class Dog
 
   def self.find_by_name
     sql = <<-SQL
-      SELECT * 
+      SELECT *
       FROM dogs
       WHERE name = ?
     SQL
     DB[:conn].execute(sql, self.name).map do |row|
       ???????????/
     end
+  end
+
+  def update
   end
 end
